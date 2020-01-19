@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -31,7 +33,12 @@ public class MainActivity extends AppCompatActivity {
     private ValueCallback<Uri> mUM;
     private ValueCallback<Uri[]> mUMA;
 
+
+
+
+
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -43,7 +50,25 @@ public class MainActivity extends AppCompatActivity {
         mWebSettings.setAllowFileAccess(true);
         mWebSettings.setAllowFileAccess(true);
         mWebSettings.setAllowContentAccess(true);
-        webView.loadUrl("http://192.168.100.143:90/manage");
+
+//        mWebSettings.setAppCacheEnabled(true);
+//        mWebSettings.setAppCachePath(getCacheDir().getAbsolutePath() );
+//        mWebSettings.setCacheMode( WebSettings.LOAD_DEFAULT );
+
+        webView.loadUrl("http://34.87.106.151/android/an_landing/");
+
+        webView.setWebViewClient(new WebViewClient(){
+            @Override public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
+                webView.loadUrl("about:blank");
+                webView.loadUrl("file:///android_asset/load.html");
+
+
+            }
+        });
+
+
+
+
         webView.setWebChromeClient(new WebChromeClient() {
             public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback, WebChromeClient.FileChooserParams fileChooserParams) {
                 if (mUMA != null) {
@@ -149,4 +174,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 }
