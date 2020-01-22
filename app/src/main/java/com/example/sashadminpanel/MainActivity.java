@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 //        mWebSettings.setAppCachePath(getCacheDir().getAbsolutePath() );
 //        mWebSettings.setCacheMode( WebSettings.LOAD_DEFAULT );
 
-        webView.loadUrl("http://34.87.106.151/android/an_landing/");
+        webView.loadUrl("http://192.168.100.236:90/manage");
 
         webView.setWebViewClient(new WebViewClient(){
             @Override public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
