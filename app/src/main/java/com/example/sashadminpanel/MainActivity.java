@@ -48,14 +48,13 @@ public class MainActivity extends AppCompatActivity {
         mWebSettings.setJavaScriptEnabled(true);
         mWebSettings.setSupportZoom(false);
         mWebSettings.setAllowFileAccess(true);
-        mWebSettings.setAllowFileAccess(true);
         mWebSettings.setAllowContentAccess(true);
 
 //        mWebSettings.setAppCacheEnabled(true);
 //        mWebSettings.setAppCachePath(getCacheDir().getAbsolutePath() );
 //        mWebSettings.setCacheMode( WebSettings.LOAD_DEFAULT );
 
-        webView.loadUrl("http://192.168.100.236:90/manage");
+        webView.loadUrl("http://35.240.136.232/manage");
 
         webView.setWebViewClient(new WebViewClient(){
             @Override public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
