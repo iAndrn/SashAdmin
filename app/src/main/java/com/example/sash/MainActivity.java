@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         webView = (WebView) findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://35.240.136.232/manage/");
+        webView.loadUrl("http://35.240.136.232/Android");
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setDomStorageEnabled(true);
